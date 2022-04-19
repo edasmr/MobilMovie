@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="nowRecyclerData"
+            type="com.mobillium.myapplication.RecyclerData" />
+    </data>
+
+    <LinearLayout
+
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/nowPlayingCard"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/movie1"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:poster_path="@{nowRecyclerData.poster_path}"
+                android:id="@+id/imagePlay" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text='@{nowRecyclerData.original_title}'
+                    android:id="@+id/baslik"
+                    android:maxLines="2"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/icerik"
+                    android:text='@{nowRecyclerData.overview}'
+                    android:textSize="15sp"
+                    android:maxLines="2"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+</LinearLayout>
+
+
+
+</layout>
